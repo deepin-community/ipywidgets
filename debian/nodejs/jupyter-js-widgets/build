@@ -1,0 +1,10 @@
+tsc --project src
+
+# this is a workaround for https://github.com/microsoft/TypeScript/issues/41347
+sed -i '/get tagName/i // @ts-ignore'  lib/*.d.ts
+tsc --project src-embed
+
+#postcss --use postcss-import --use postcss-cssnext -o css/widgets.built.css css/widgets.css
+cat css/widgets.css | sed '/@import.*lab/ r css/labvariables.css' | sed '/@import.*wid/ r css/widgets-base.css' | sed '/@import.*mat/ r css/materialdesign.css' > css/widgets.built.css
+
+webpack
