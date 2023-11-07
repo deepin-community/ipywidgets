@@ -1,0 +1,25 @@
+From: Lumir Balhar <lbalhar@redhat.com>
+Date: Wed, 8 Jun 2022 09:55:47 +0200
+Subject: Use `dict` instead of `print` to test callable without signature
+
+In Python 3.11, `inspect.signature(print)` no longer raises
+ValueError.
+
+Fixes: https://github.com/jupyter-widgets/ipywidgets/issues/3459
+---
+ ipywidgets/widgets/tests/test_interaction.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ipywidgets/widgets/tests/test_interaction.py b/ipywidgets/widgets/tests/test_interaction.py
+index 9cae1e8..8168231 100644
+--- a/ipywidgets/widgets/tests/test_interaction.py
++++ b/ipywidgets/widgets/tests/test_interaction.py
+@@ -712,7 +712,7 @@ def test_multiple_selection():
+ 
+ def test_interact_noinspect():
+     a = u'hello'
+-    c = interactive(print, a=a)
++    c = interactive(dict, a=a)
+     w = c.children[0]
+     check_widget(w,
+         cls=widgets.Text,

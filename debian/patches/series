@@ -8,3 +8,4 @@
 0011-Simplify-sphinx-build.patch
 0012-Javascript-not-detected-hint.patch
 python3.10.patch
+0011-Use-dict-instead-of-print-to-test-callable-without-s.patch
