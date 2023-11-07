@@ -1,8 +1,16 @@
-ipywidgets (6.0.0-9) UNRELEASED; urgency=medium
+ipywidgets (6.0.0-11) unstable; urgency=medium
 
-  * update
+  * Team upload.
+  * Add upstream patch for failing test in Python 3.11
 
- -- Debian Python Team <team+python@tracker.debian.org>  Thu, 16 Jun 2022 13:43:16 +0800
+ -- Jochen Sprickerhof <jspricke@debian.org>  Wed, 11 Jan 2023 17:37:39 +0100
+
+ipywidgets (6.0.0-10) unstable; urgency=medium
+
+  * Team upload.
+  * Add missing build dependency (Closes: #1008328)
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Sun, 25 Dec 2022 22:42:11 +0100
 
 ipywidgets (6.0.0-9) unstable; urgency=medium
 
